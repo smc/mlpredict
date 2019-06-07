@@ -1,3 +1,3 @@
 Flask
 gunicorn
-markovchain
+git+https://github.com/santhoshtr/markovchain.git
