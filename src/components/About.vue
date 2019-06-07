@@ -3,31 +3,16 @@
     <div class="container">
       <div >
         <div >
-          <h2 class="white-text">Malayalam morphological analyser</h2>
+          <h2 class="white-text">Malayalam word predictor</h2>
           <p
 
-          >mlmorph is Malayalam Morphology Analyzer and Generator.</p>
+          >Word prediction using Markov chain model of Malayalam</p>
         </div>
         <div>
           <h5 >Source code</h5>
           <ul>
             <li>
-              <a  href="https://gitlab.com/smc/mlmorph">Morphology analyser</a>
-            </li>
-            <li>
-              <a
-
-                href="https://gitlab.com/smc/mlmorph-spellchecker"
-              >Malayalam spellchecker</a>
-            </li>
-            <li>
-              <a  href="https://gitlab.com/smc/mlmorph-web">This web interface</a>
-            </li>
-            <li>
-              <a
-
-                href="https://gitlab.com/smc/mlmorph-libreoffice-spellchecker"
-              >Libreoffice spellchecker</a>
+              <a  href="https://gitlab.com/smc/mlpredict">Morphology analyser</a>
             </li>
           </ul>
         </div>

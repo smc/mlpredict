@@ -61,8 +61,8 @@ export default {
   methods: {
     generate () {
       const start = this.input.trim()
-      const w = this.input.split(' ').length + this.w
-      const api = `api/predict?start=${start}&w=${w}&c=${this.c}`
+      const wc = parseInt(this.input.split(' ').length) + parseInt(this.w)
+      const api = `api/predict?start=${start}&w=${wc}&c=${this.c}`
       axios
         .get(api)
         .then(response => {
