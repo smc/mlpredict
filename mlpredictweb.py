@@ -9,8 +9,6 @@ app = Flask(__name__,
             static_folder="./dist/static",
             template_folder="./dist")
 
-mlmarkov = MalayalamMarkov(input_db='./malayalam.db')
-
 
 @app.route("/", defaults={'path': ''})
 @app.route('/<path:path>')
@@ -26,6 +24,7 @@ def do_generate():
     number_results = request.args.get('c')
     if not number_results:
         number_results = 1
+    mlmarkov = MalayalamMarkov(input_db='./malayalam.db')
     results = mlmarkov.predict(start, int(number_words), int(number_results))
     return jsonify(word=start, predictions=results)
 
