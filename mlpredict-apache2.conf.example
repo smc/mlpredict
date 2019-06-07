@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerName mydomain
+    WSGIDaemonProcess mlpredict user=www-data group=www-data threads=5 python-home=/home/user/path/to/mlpredict-web/ENV_DIR
+    WSGIScriptAlias /mlpredict /home/user/path/to/mlpredict-web/mlpredict.wsgi
+    <Directory /home/user/path/to/mlpredict-web/>
+        WSGIProcessGroup mlpredict
+        WSGIApplicationGroup %{GLOBAL}
+        WSGIScriptReloading On
+        Require all granted
+    </Directory>
+     ErrorLog ${APACHE_LOG_DIR}/error-mlpredict.log
+     CustomLog ${APACHE_LOG_DIR}/access-mlmorh.log combined
+</VirtualHost>
