@@ -2,8 +2,6 @@
   <v-app light>
     <v-navigation-drawer fixed v-model="drawer" app>
       <h1>{{appName}}</h1>
-
-      <h3>Malayalam word predictor</h3>
       <v-divider></v-divider>
       <v-list dense class="pt-0">
         <v-list-tile v-for="item in items" :key="item.title" :href="item.href">
@@ -37,7 +35,8 @@ export default {
     items: [
       { title: 'Predictor', icon: 'apps', href: '/' },
       { title: 'About', icon: 'question_answer', href: '/about' },
-      { title: 'Code', icon: 'code', href: 'https://gitlab.com/smc/mlmorph' }
+      { title: 'Code', icon: 'code', href: 'https://gitlab.com/smc/mlpredict' },
+      { title: 'Api', icon: 'code', href: '/api' }
     ],
     drawer: null
   })
