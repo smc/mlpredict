@@ -17,16 +17,6 @@
       <v-flex xs6>
         <v-text-field
           type="number"
-          v-model="w"
-          label="How many words to predict"
-          :value="w"
-          v-on:change="generate"
-          v-on:input="generate"
-        ></v-text-field>
-      </v-flex>
-      <v-flex xs6>
-        <v-text-field
-          type="number"
           v-model="c"
           label="How many different sentnences?"
           :value="c"
@@ -38,7 +28,9 @@
         <template v-for="(item, index) in predictions">
           <v-list-tile :key="index" avatar>
             <v-list-tile-content>
-              <v-list-tile-title v-html="item"></v-list-tile-title>
+              <v-list-tile-title>
+                <p v-html="item"></p>
+              </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </template>
@@ -53,7 +45,6 @@ export default {
   name: 'Predictor',
   data: () => ({
     input: '',
-    w: 2,
     c: 4,
     predictions: []
   }),
@@ -61,7 +52,7 @@ export default {
   methods: {
     generate () {
       const start = this.input.trim()
-      const wc = parseInt(this.input.split(' ').length) + parseInt(this.w)
+      const wc = 2
       const api = `api/predict?start=${start}&w=${wc}&c=${this.c}`
       axios
         .get(api)
