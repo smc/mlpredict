@@ -44,7 +44,7 @@ import axios from 'axios'
 export default {
   name: 'Predictor',
   data: () => ({
-    input: '',
+    input: 'ആ രീതിയിൽ',
     c: 4,
     predictions: []
   }),
