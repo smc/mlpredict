@@ -1,4 +1,3 @@
-import sys
 import os
 from flask import Flask, jsonify, render_template, request
 from MalayalamMarkovChain import MalayalamMarkov
@@ -28,6 +27,5 @@ def do_generate():
     results = mlmarkov.predict(start, int(number_words), int(number_results))
     return jsonify(word=start, predictions=results)
 
-
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
